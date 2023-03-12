@@ -4,25 +4,13 @@ import Bug from "./Bug";
 import { useReducer } from "react";
 import { BiBrush } from "react-icons/bi";
 
-const formReducer = (state, event) => {
-  return {
-    ...state,
-    [event.target.name]: event.target.value,
-  };
-};
-
-const UpdateUserForm = () => {
-  const [formData, setFormData] = useReducer(formReducer, {});
-
+const UpdateUserForm = ({ formId, formData, setFormData }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (Object.keys(formData).length == 0)
       return console.log("dont't have Data");
-    console.log(formData);
   };
-
-  if (Object.keys(formData).length > 0)
-    return <Success message={"Data Added"} />;
+  if (Object.keys(formData).length > 0) return <Bug message={"Error"} />;
 
   return (
     <div>

@@ -8,7 +8,7 @@ const Home = () => {
   const [visible, setVisible] = useState(false);
 
   const handler = () => {
-    setVisible(true);
+    setVisible(!visible);
   };
 
   return (
@@ -38,9 +38,8 @@ const Home = () => {
         </div>
 
         {/*coll form*/}
-        <div className="container mx-auto py-5">
-          {visible ? <Form /> : <></>}
-        </div>
+
+        {visible ? <Form /> : <></>}
 
         {/*Table*/}
         <div className="container mx-auto">
